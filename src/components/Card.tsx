@@ -16,6 +16,9 @@ export function Card({ title, value, trend }: CardProps) {
   };
 
   const getTrendIcon = () => {
+    if (title === 'Receitas') {
+      return <ArrowUpCircle className="w-6 h-6 text-[#00FF94]" />;
+    }
     switch (trend) {
       case 'up':
         return <ArrowUpCircle className="w-6 h-6 text-[#00FF94]" />;
@@ -43,7 +46,7 @@ export function Card({ title, value, trend }: CardProps) {
         <h3 className="text-gray-400 font-medium">{title}</h3>
         {getTrendIcon()}
       </div>
-      <p className={`text-2xl font-bold ${getTrendColor()}`}>
+      <p className={`text-2xl font-bold ${title === 'Receitas' ? 'text-[#00FF94]' : getTrendColor()}`}>
         {formatValue(value)}
       </p>
     </div>

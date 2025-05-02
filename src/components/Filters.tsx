@@ -47,16 +47,18 @@ const Filters: React.FC<FiltersProps> = ({
   };
 
   return (
-    <div className="flex flex-wrap items-center gap-4 mb-6">
-      <div className="flex items-center gap-2">
-        <label htmlFor="month" className="text-sm text-text-secondary">
+    <div
+      className="w-full flex flex-col md:flex-row md:items-center md:gap-6 gap-4 mb-4 bg-[#181818] rounded-xl p-4 shadow-sm border border-[#232323]"
+    >
+      <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2 w-full md:w-auto">
+        <label htmlFor="month" className="text-base font-medium text-gray-200 md:mb-0 mb-1">
           Mês:
         </label>
         <select
           id="month"
           value={selectedFilters.month}
           onChange={(e) => handleFilterChange('month', e.target.value)}
-          className="bg-card-bg-light border border-border rounded-md py-1.5 px-3 text-sm outline-none focus:border-primary transition-colors"
+          className="bg-[#232323] border border-[#333] rounded-lg py-2 px-4 text-base text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/40 transition-colors shadow-sm hover:border-primary/60"
         >
           <option value="">Todos os Meses</option>
           {months.map((month) => (
@@ -67,15 +69,15 @@ const Filters: React.FC<FiltersProps> = ({
         </select>
       </div>
 
-      <div className="flex items-center gap-2">
-        <label htmlFor="year" className="text-sm text-text-secondary">
+      <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2 w-full md:w-auto">
+        <label htmlFor="year" className="text-base font-medium text-gray-200 md:mb-0 mb-1">
           Ano:
         </label>
         <select
           id="year"
           value={selectedFilters.year}
           onChange={(e) => handleFilterChange('year', e.target.value)}
-          className="bg-card-bg-light border border-border rounded-md py-1.5 px-3 text-sm outline-none focus:border-primary transition-colors"
+          className="bg-[#232323] border border-[#333] rounded-lg py-2 px-4 text-base text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/40 transition-colors shadow-sm hover:border-primary/60"
         >
           <option value="">Todos os Anos</option>
           {years.map((year) => (
@@ -86,15 +88,15 @@ const Filters: React.FC<FiltersProps> = ({
         </select>
       </div>
 
-      <div className="flex items-center gap-2">
-        <label htmlFor="category" className="text-sm text-text-secondary">
+      <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2 w-full md:w-auto">
+        <label htmlFor="category" className="text-base font-medium text-gray-200 md:mb-0 mb-1">
           Categoria:
         </label>
         <select
           id="category"
           value={selectedFilters.category}
           onChange={(e) => handleFilterChange('category', e.target.value)}
-          className="bg-card-bg-light border border-border rounded-md py-1.5 px-3 text-sm outline-none focus:border-primary transition-colors"
+          className="bg-[#232323] border border-[#333] rounded-lg py-2 px-4 text-base text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/40 transition-colors shadow-sm hover:border-primary/60"
         >
           <option value="">Todas as Categorias</option>
           {categories.map((category) => (
@@ -107,9 +109,10 @@ const Filters: React.FC<FiltersProps> = ({
 
       <button
         onClick={handleResetFilters}
-        className="ml-auto flex items-center gap-1.5 py-1.5 px-3 rounded-md bg-card-bg-light text-sm text-text-secondary hover:bg-primary/10 hover:text-primary transition-colors"
+        className="flex items-center gap-2 py-2 px-4 rounded-lg bg-[#232323] text-base text-gray-300 hover:bg-primary/20 hover:text-primary border border-[#333] transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/40 ml-0 md:ml-auto mt-2 md:mt-0"
+        aria-label="Limpar Filtros"
       >
-        <FilterX size={14} />
+        <FilterX size={16} />
         Limpar Filtros
       </button>
     </div>

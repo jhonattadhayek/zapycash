@@ -1,12 +1,8 @@
 import React from 'react';
+import ComingSoon from '../components/ComingSoon';
 
 const Reports: React.FC = () => {
-  return (
-    <div className="p-8">
-      <h1 className="text-2xl font-bold mb-4">Relatórios</h1>
-      <p>Em desenvolvimento...</p>
-    </div>
-  );
+  return <ComingSoon title="Relatórios" />;
 };
 
 export default Reports; 

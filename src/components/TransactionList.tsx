@@ -29,7 +29,9 @@ export function TransactionList({ transactions }: TransactionListProps) {
           <div className="flex items-center space-x-4">
             <div
               className={`w-2 h-2 rounded-full ${
-                transaction.tipo === 'receita' ? 'bg-[#00FF94]' : 'bg-red-500'
+                ['receita', 'entrada'].includes(transaction.tipo as string)
+                  ? 'bg-[#00FF94]'
+                  : 'bg-red-500'
               }`}
             />
             <div>
@@ -43,10 +45,12 @@ export function TransactionList({ transactions }: TransactionListProps) {
           </div>
           <p
             className={`font-semibold ${
-              transaction.tipo === 'receita' ? 'text-[#00FF94]' : 'text-red-500'
+              ['receita', 'entrada'].includes(transaction.tipo as string)
+                ? 'text-[#00FF94]'
+                : 'text-red-500'
             }`}
           >
-            {transaction.tipo === 'receita' ? '+' : '-'} {formatValue(transaction.valor)}
+            {(['receita', 'entrada'].includes(transaction.tipo as string) ? '+' : '-')} {formatValue(transaction.valor)}
           </p>
         </div>
       ))}
